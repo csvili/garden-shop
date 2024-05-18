@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <span>Greenland Kertészet</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/">Kezdőlap</button>
+  <button mat-button routerLink="/products">Termékek</button>
+  <button mat-button routerLink="/cart">Kosár</button>
+  <button mat-button routerLink="/login">Bejelentkezés</button>
+  <button mat-button routerLink="/register">Regisztráció</button>
+  <a class="logout" (click)="logout()" *ngIf="isLoggedIn">Kijelentkezés</a>
+</mat-toolbar>

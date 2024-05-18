@@ -1,0 +1,45 @@
+<div class="hero">
+  <div class="hero-content">
+    <h1>
+      <div class="hero-subtitle">Kertészetben az első
+        <br>
+        <br>
+        Greenland
+      </div>
+    </h1>
+  </div>
+  <div class="hero-image">
+    <div class="content-frame">
+      <img alt="Termékek" class="content-frame-polygon" src="https://www.fieldmann.hu/Fieldmann/media/static-media/60f21875-b4c7-4171-8891-0d6ba949b81a@w800.webp">
+    </div>
+  </div>
+</div>
+
+<div class="why-us">
+  <h2>Miért vásárolj tőlünk?</h2>
+  <ul>
+    <li>Széles termékkínálat</li>
+    <li>Kiváló minőségű termékek</li>
+    <li>Gyors szállítás</li>
+    <li>Versenyképes árak</li>
+  </ul>
+</div>
+
+<h1>Termékek</h1>
+<div class="products-container">
+  <mat-form-field>
+    <mat-label>Rendezés</mat-label>
+    <mat-select (selectionChange)="sortProducts($event.value)">
+      <mat-option value="name">Név szerint</mat-option>
+      <mat-option value="price">Ár szerint</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="product-card" *ngFor="let product of sortedProducts$ | async">
+    <img [src]="product.imageUrl" alt="{{ product.name }}">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.price | price }}</p>
+    <button mat-button color="primary" (click)="addToCart(product)">Kosárba</button>
+    <a [routerLink]="['/products', product.id]">Részletek</a>
+  </div>
+</div>
+

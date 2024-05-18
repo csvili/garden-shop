@@ -1,0 +1,19 @@
+<div class="login-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required>
+      <mat-error *ngIf="loginForm.get('email')?.invalid">{{getEmailErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" required>
+      <mat-error *ngIf="loginForm.get('password')?.invalid">{{getPasswordErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Bejelentkezés</button>
+  </form>
+  <div *ngIf="loginError" class="error">{{loginError}}</div>
+  <div *ngIf="successMessage" class="success">{{successMessage}}</div>
+</div>

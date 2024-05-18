@@ -1,0 +1,10 @@
+<div class="product-detail">
+  <button mat-button color="primary" (click)="goBack()">Vissza</button>
+  <ng-container *ngIf="product">
+    <h1>{{ product.name }}</h1>
+    <img [src]="product.imageUrl" alt="{{ product.name }}">
+    <p>{{ product.description }}</p>
+    <p>{{ product.price }} Ft</p>
+    <button mat-button color="primary" (click)="addToCart()">Kosárba</button>
+  </ng-container>
+</div>

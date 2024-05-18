@@ -1,0 +1,52 @@
+::ng-deep {
+  .mat-toolbar.mat-primary {
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .mat-button {
+    color: white;
+  }
+
+  .header-title {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .logout {
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .header-title {
+      font-size: 1.2em;
+    }
+
+    .mat-toolbar-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .mat-button, .logout {
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header-title {
+      font-size: 1em;
+    }
+
+    .mat-button, .logout {
+      margin-top: 5px;
+      font-size: 0.8em;
+    }
+  }
+}

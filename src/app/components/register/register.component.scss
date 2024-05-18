@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Háttérszín a jobb láthatóság érdekében */
+}
+
+.login-container, .register-container {
+  background-color: #ffffff; /* Világos háttérszín */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #4CAF50 !important;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px; 
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+mat-error {
+  color: red;
+  font-size: 14px;
+}

@@ -1,0 +1,23 @@
+<div class="cart-container">
+  <h1>Kosár</h1>
+  <div *ngIf="cartItems$ | async as cartItems; else emptyCart">
+    <div class="cart-items">
+      <div class="cart-item" *ngFor="let product of cartItems">
+        <img [src]="product.imageUrl" alt="{{ product.name }}">
+        <div class="item-details">
+          <h2>{{ product.name }}</h2>
+          <p>{{ product.price | price }} Ft</p>
+        </div>
+        <button mat-icon-button color="warn" (click)="removeFromCart(product)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="total-price">
+      <h2>Összesen: {{ totalPrice$ | async | price }}</h2>
+    </div>
+  </div>
+  <ng-template #emptyCart>
+    <p>A kosár üres.</p>
+  </ng-template>
+</div>

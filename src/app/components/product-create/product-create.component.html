@@ -1,0 +1,22 @@
+<div class="product-form">
+  <h2>Új Termék Létrehozása</h2>
+  <form (ngSubmit)="addProduct()">
+    <mat-form-field>
+      <mat-label>Név</mat-label>
+      <input matInput [(ngModel)]="product.name" name="name" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Ár</mat-label>
+      <input matInput type="number" [(ngModel)]="product.price" name="price" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Leírás</mat-label>
+      <textarea matInput [(ngModel)]="product.description" name="description" required></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Kép URL</mat-label>
+      <input matInput [(ngModel)]="product.imageUrl" name="imageUrl" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Létrehozás</button>
+  </form>
+</div>
